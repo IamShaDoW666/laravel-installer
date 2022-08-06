@@ -1,0 +1,26 @@
+{
+    "name": "spot/laravel-installer",
+    "description": "Laravel GUI Installer",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "IamShaDoW666",
+            "email": "www.gaming2018@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Spot\\LaravelInstaller\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spot\\LaravelInstaller\\LaravelInstallerProvider"
+            ]
+        }
+    }
+}
