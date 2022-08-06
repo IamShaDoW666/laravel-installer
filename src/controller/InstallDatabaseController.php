@@ -2,8 +2,8 @@
 
 namespace Spot\LaravelInstaller\Controller;
 
-use dacoto\LaravelInstaller\Support\EnvEditor;
 use Exception;
+use Spot\LaravelInstaller\Support\EnvEditor;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -39,6 +39,7 @@ class InstallDatabaseController extends Controller
         try {
             
             //DB
+            EnvEditor::setEnv('DB_CONNECTION', 'mysql');
             EnvEditor::setEnv('DB_HOST', $request->input('database_hostname'));
             EnvEditor::setEnv('DB_PORT', $request->input('database_port'));
             EnvEditor::setEnv('DB_DATABASE', $request->input('database_name'));
