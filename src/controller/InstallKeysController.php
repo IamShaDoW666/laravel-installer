@@ -34,6 +34,9 @@ class InstallKeysController extends Controller
             if (empty(env('APP_KEY'))) {
                 EnvEditor::setEnv('APP_KEY', trim(str_replace('"', '', Artisan::output())));
             }
+            if (!file_exists(storage_path('/public/imgs'))) {
+                mkdir(storage_path('/public/imgs'), 0777, true);
+            }
             Artisan::call('storage:link');
             if (empty(env('APP_KEY'))) {
                 return view('Installer::install.keys', ['error' => 'The application keys could not be generated.']);
