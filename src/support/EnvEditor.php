@@ -14,6 +14,6 @@ class EnvEditor
 
     public static function getEnv($key) 
     {
-        SetEnv::getenv($key);
+        return SetEnv::getValue($key);
     }
 }
