@@ -5,8 +5,8 @@ namespace spot\LaravelInstaller;
 use App\Http\Kernel;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
-use Spot\LaravelInstaller\Middleware\InstallerMiddleware;
-use Spot\LaravelInstaller\Middleware\NotInstalledMiddleware;
+use spot\LaravelInstaller\Middleware\InstallerMiddleware;
+use spot\LaravelInstaller\Middleware\NotInstalledMiddleware;
 
 class LaravelInstallerProvider extends ServiceProvider
 {

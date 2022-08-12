@@ -2,8 +2,9 @@
 
 namespace spot\LaravelInstaller\Controller;
 
+use App\Models\User;
 use Exception;
-use Spot\LaravelInstaller\Support\EnvEditor;
+use spot\LaravelInstaller\Support\EnvEditor;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Hash;
 
 class InstallDatabaseController extends Controller
 {
@@ -103,6 +105,11 @@ class InstallDatabaseController extends Controller
         }
         try {
             Artisan::call('migrate', ['--seed' => true]);
+            User::create([
+                'name' => EnvEditor::getEnv('ADMIN_USERNAME'),
+                'email' => EnvEditor::getEnv('ADMIN_USERNAME'),
+                'password' => Hash::make(EnvEditor::getEnv('ADMIN_PASSWORD'))
+            ]);
             return redirect()->route('LaravelInstaller::install.keys');
         } catch (Exception $e) {
             return view('Installer::install.migrations', ['error' => $e->getMessage() ?: 'An error occurred while executing migrations']);

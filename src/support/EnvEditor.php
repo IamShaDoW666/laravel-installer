@@ -11,4 +11,9 @@ class EnvEditor
         SetEnv::setKey($key, $value);
         SetEnv::save();
     }
+
+    public static function getEnv($key) 
+    {
+        SetEnv::getenv($key);
+    }
 }
