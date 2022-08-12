@@ -18,13 +18,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Spot\\LaravelInstaller\\": "src/"
+      "spot\\LaravelInstaller\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Spot\\LaravelInstaller\\LaravelInstallerProvider"
+        "spot\\LaravelInstaller\\LaravelInstallerProvider"
       ]
     }
   }
