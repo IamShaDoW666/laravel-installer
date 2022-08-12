@@ -1,6 +1,6 @@
 <?php
 
-namespace Spot\LaravelInstaller;
+namespace spot\LaravelInstaller;
 
 use App\Http\Kernel;
 use Illuminate\Routing\Router;

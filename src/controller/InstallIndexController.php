@@ -1,6 +1,6 @@
 <?php
 
-namespace Spot\LaravelInstaller\Controller;
+namespace spot\LaravelInstaller\Controller;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
@@ -33,6 +33,6 @@ class InstallIndexController extends Controller
         Artisan::call('config:clear');
         Artisan::call('view:clear');
         Artisan::call('optimize:clear');
-        return view('Installer::install.finish', ['path' => $path]);
+        return view('installer::steps.finish', ['path' => $path]);
     }
 }

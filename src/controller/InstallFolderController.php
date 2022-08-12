@@ -1,6 +1,6 @@
 <?php
 
-namespace Spot\LaravelInstaller\Controller;
+namespace spot\LaravelInstaller\Controller;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Spot\LaravelInstaller\Middleware;
+namespace spot\LaravelInstaller\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Spot\LaravelInstaller\Support;
+namespace spot\LaravelInstaller\Support;
 
 use SetEnv;
 

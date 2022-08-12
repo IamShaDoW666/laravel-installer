@@ -1,6 +1,6 @@
 <?php
 
-namespace Spot\LaravelInstaller\Controller;
+namespace spot\LaravelInstaller\Controller;
 
 use App\Http\Controllers\Controller;
 

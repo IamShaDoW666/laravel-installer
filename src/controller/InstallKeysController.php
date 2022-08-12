@@ -1,10 +1,10 @@
 <?php
 
-namespace Spot\LaravelInstaller\Controller;
+namespace spot\LaravelInstaller\Controller;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
+
 
 class InstallKeysController extends Controller
 {
@@ -33,9 +33,6 @@ class InstallKeysController extends Controller
             Artisan::call('key:generate', ['--force' => true, '--show' => true]);
             if (empty(env('APP_KEY'))) {
                 EnvEditor::setEnv('APP_KEY', trim(str_replace('"', '', Artisan::output())));
-            }
-            if (!file_exists(storage_path('/public/imgs'))) {
-                mkdir(storage_path('/public/imgs'), 0777, true);
             }
             Artisan::call('storage:link');
             if (empty(env('APP_KEY'))) {
