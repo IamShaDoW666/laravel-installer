@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::group([
     'prefix' => 'install',
     'as' => 'LaravelInstaller::',
-    'namespace' => 'Spot\LaravelInstaller\Controller',
+    'namespace' => 'spot\LaravelInstaller\Controller',
     'middleware' => ['web', 'installer']
 ], static function () {
     Route::get('/', ['as' => 'install.index', 'uses' => 'InstallIndexController@index']);
