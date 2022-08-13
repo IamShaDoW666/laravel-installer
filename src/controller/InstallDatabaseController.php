@@ -104,12 +104,13 @@ class InstallDatabaseController extends Controller
             return redirect()->route('LaravelInstaller::install.database');
         }
         try {
-            Artisan::call('migrate', ['--seed' => true]);
-            User::create([
-                'name' => EnvEditor::getEnv('ADMIN_USERNAME'),
-                'email' => EnvEditor::getEnv('ADMIN_USERNAME'),
+            Artisan::call('migrate', ['--seed' => true]);  
+            $user = User::create([
+                'name' => EnvEditor::getEnv('ADMIN_EMAIL'),
+                'email' => EnvEditor::getEnv('ADMIN_EMAIL'),
                 'password' => Hash::make(EnvEditor::getEnv('ADMIN_PASSWORD'))
             ]);
+            $user->assignRole('Owner');
             return redirect()->route('LaravelInstaller::install.keys');
         } catch (Exception $e) {
             return view('Installer::install.migrations', ['error' => $e->getMessage() ?: 'An error occurred while executing migrations']);

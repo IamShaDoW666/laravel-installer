@@ -12,14 +12,14 @@ class LaravelInstallerProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/installer.php', 'installer');
-        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
+        $this->mergeConfigFrom(__DIR__ . '/Config/installer.php', 'installer');
+        $this->loadRoutesFrom(__DIR__ . '/Routes/web.php');
     }
 
     public function boot(Kernel $kernel, Router $router)
     {
         $kernel->prependMiddlewareToGroup('web', NotInstalledMiddleware::class);
         $router->pushMiddlewareToGroup('installer', InstallerMiddleware::class);
-        $this->loadViewsFrom(__DIR__ . '/views', 'Installer');
+        $this->loadViewsFrom(__DIR__ . '/Views', 'Installer');
     }
 }

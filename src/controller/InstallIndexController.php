@@ -33,6 +33,6 @@ class InstallIndexController extends Controller
         Artisan::call('config:clear');
         Artisan::call('view:clear');
         Artisan::call('optimize:clear');
-        return view('installer::steps.finish', ['path' => $path]);
+        return view('Installer::install.finish', ['path' => $path]);
     }
 }

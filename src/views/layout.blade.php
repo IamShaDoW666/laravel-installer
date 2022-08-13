@@ -17,7 +17,7 @@
                 <div class="bg-white shadow overflow-hidden sm:rounded-lg">
                     <div class="px-4 py-8 border-b border-gray-400 bg-gray-400 sm:px-6">
                         <div class="flex justify-center items-center">
-                            <img alt="App logo" class="h-12" src="/imgs/installer/app.webp">
+                            <img alt="App logo" class="h-12" src="/images/installer/spot.png">
                             <h2 class="pl-6 uppercase font-medium text-2xl text-gray-800">{{ config('app.name', 'Laravel') }} Installation</h2>
                         </div>
                     </div>

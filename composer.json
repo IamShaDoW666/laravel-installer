@@ -18,7 +18,7 @@
   },
   "autoload": {
     "psr-4": {
-      "spot\\LaravelInstaller\\": "src/"
+      "spot\\LaravelInstaller\\": "src"
     }
   },
   "extra": {
