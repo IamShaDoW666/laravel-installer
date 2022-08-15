@@ -111,6 +111,7 @@ class InstallDatabaseController extends Controller
                 'password' => Hash::make(EnvEditor::getEnv('ADMIN_PASSWORD'))
             ]);
             $user->assignRole('Owner');
+            $user->save();
             return redirect()->route('LaravelInstaller::install.keys');
         } catch (Exception $e) {
             return view('Installer::install.migrations', ['error' => $e->getMessage() ?: 'An error occurred while executing migrations']);
